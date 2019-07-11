@@ -1,0 +1,32 @@
+.my-navbar{
+    background-color: rgba(223, 230, 233,1.0);
+}
+/* .text-awal{
+    padding: 0px 0px 0px 0px;
+} */
+.banner{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color:rgba(99, 110, 114,1.0);
+}
+.banner-text{
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.layanan{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.box-layanan{
+    height: 100% !important;
+}
+.berita{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color:rgba(99, 110, 114,1.0);
+}
+.berita-img{
+    height: 50%;
+}
