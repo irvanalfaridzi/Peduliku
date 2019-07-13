@@ -27,7 +27,6 @@
     padding-top: 5%;
     padding-bottom: 5%;
     margin-top: 5%;
-    margin-bottom: 5%;
     background-color:rgba(99, 110, 114,1.0);
 }
 .berita-img{
@@ -35,5 +34,6 @@
 }
 .footer{
     background-color: rgba(45, 52, 54,1.0);
-    padding: 5%;
+    padding-top: 5%;
+    padding-bottom: 2%;
 }
