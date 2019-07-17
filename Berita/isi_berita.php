@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image/png" href="./Gambar/icon_peduliku.png">
+  <link rel="icon" type="image/png" href="../Gambar/icon_peduliku.png">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -19,8 +19,8 @@
 <body>
   <!-- Awal Navbar -->
   <nav class="my-navbar navbar sticky-top navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="index.html">
-      <img src="./Gambar/peduliku.png" height="50" alt="">
+    <a class="navbar-brand" href="../index.php">
+      <img src="../Gambar/peduliku.png" height="50" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,59 +30,66 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="../index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="berita.html">Berita</a>
+          <a class="nav-link" href="berita.php">Berita</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a class="nav-link" href="masuk.html">Masuk</a>
+          <a class="nav-link" href="../masuk.php">Masuk</a>
         </li>
         <li>
-          <a class="nav-link" href="daftar.html">Daftar</a>
+          <a class="nav-link" href="../daftar.php">Daftar</a>
         </li>
       </ul>
     </div>
   </nav>
   <!-- Akhir Navbar -->
 
-  <!-- form masuk -->
-  <section class="masuk">
+  <!-- isi berita -->
+  <section class="berita-file">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2>LOGIN</h2>
-          <hr>
+        <div class="col-lg-12">
+          <h2 style="padding-bottom: 2%" class="judul-teks">Judul Berita</h2>
         </div>
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4 ">
-          <form action="proses_login.php" method="post">
-            <div class="form-group">
-              <label for="exampleInputEmail1"><b>Username</b></label>
-              <input name="username" type="text" class="form-control" id="exampleInputEmail1"
-                aria-describedby="emailHelp" placeholder="Enter Username">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1"><b>Password</b></label>
-              <input name="password" type="password" class="form-control" id="exampleInputPassword1"
-                placeholder="Enter Password">
-            </div>
-            <div class="col-md-6">
-              <button type="submit" class="btn btn-primary w-100">Login</button>
-            </div>
-          </form>
-          <center>
-            <p class="pt-4">Sudah punya akun? <a href="login.php"><B>Login</B></a> | Kembali ke Beranda, Klik di <a
-                href="index.php"><B>sini</B></a></p>
-          </center>
+        <div class="col-lg-8">
+          <img class="img-fluid" src="../Gambar/tsunami.jpg" alt="Tsunami">
+          <p style="padding-top: 2%">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+          <section id="forum">
+            <h2 style="padding-top: 2%" class="judul-teks">Forum Berita</h2>
+            <h1>COMING SOON</h1>
+          </section>
         </div>
-        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Donatur
+              <span class="badge badge-primary badge-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Perolehan
+              <span class="badge badge-primary badge-pill">Rp 1.500.555</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Sisa Hari
+              <span class="badge badge-primary badge-pill">1</span>
+            </li>
+            <a style="margin-top:5%;" href="donasi.php" class="btn btn-success" role="button">Donasi Sekarang</a>
+            <a style="margin-top:5%;" href="#forum" class="btn btn-primary" role="button">Buka Forum Sekarang</a>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
-  <!-- form masuk -->
+  <!-- isi berita -->
 
   <!-- Footer -->
   <section class="footer">

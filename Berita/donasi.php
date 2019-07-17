@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="./Gambar/icon_peduliku.png">
+    <link rel="icon" type="image/png" href="../Gambar/icon_peduliku.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -19,8 +19,8 @@
 <body>
     <!-- Awal Navbar -->
     <nav class="my-navbar navbar sticky-top navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">
-            <img src="./Gambar/peduliku.png" height="50" alt="">
+        <a class="navbar-brand" href="../index.php">
+            <img src="../Gambar/peduliku.png" height="50" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,18 +30,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="../index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="berita.html">Berita</a>
+                    <a class="nav-link" href="berita.php">Berita</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="nav-link" href="masuk.html">Masuk</a>
+                    <a class="nav-link" href="../masuk.php">Masuk</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="daftar.html">Daftar</a>
+                    <a class="nav-link" href="../daftar.php">Daftar</a>
                 </li>
             </ul>
         </div>
@@ -129,7 +129,7 @@
                 <div class="col-lg-4"></div>
                 <div class="col-lg-4">
                     <center>
-                        <img src="./Gambar/peduliku.png" alt="..." class="rounded">
+                        <img src="../Gambar/peduliku.png" alt="..." class="rounded">
                         <p class="color-text">Tanggap Bencana Indonesia</p>
                     </center>
                 </div>
