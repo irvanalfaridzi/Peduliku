@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image/png" href="../Gambar/icon_peduliku.png">
+  <link rel="icon" type="image/png" href="../../Gambar/icon_peduliku.png">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../../style.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,10 +16,14 @@
 </head>
 
 <body>
+<?php
+  include '../../koneksi/koneksi.php';
+  session_start();
+  ?>
   <!-- Awal Navbar -->
   <nav class="my-navbar navbar sticky-top navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="../index.php">
-      <img src="../Gambar/peduliku.png" height="50" alt="">
+    <a class="navbar-brand" href="../user.php">
+      <img src="../../Gambar/peduliku.png" height="50" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -28,19 +32,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="../index.php">Home</a>
+          <a class="nav-link" href="../user.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="berita.php">Berita</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a class="nav-link" href="../masuk.php">Masuk</a>
-        </li>
-        <li>
-          <a class="nav-link" href="../daftar.php">Daftar</a>
-        </li>
+        <div class="btn-group">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <?php echo $_SESSION['username']; ?>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="../logout.php">Logout</a>
+          </div>
+        </div>
       </ul>
     </div>
   </nav>
@@ -48,9 +55,8 @@
 
   <!-- Koneksi dan mengambil id_berita dari index.php -->
   <?php
-  include '../koneksi/koneksi.php';
+  include '../../koneksi/koneksi.php';
   $id_berita = $_POST['id_berita'];
-  session_start();
   $_SESSION['id'] = $id_berita;
   ?>
 
@@ -73,7 +79,7 @@
               <h2 style="padding-bottom: 2%" class="judul-teks"><?php echo $row['judul']; ?></h2>
             </div>
             <div class="col-lg-8">
-              <img class="img-fluid" src=<?php echo '../images/' . $row['nama']; ?> alt="Tsunami">
+              <img class="img-fluid" src=<?php echo '../../images/' . $row['nama']; ?> alt="Tsunami">
               <p style="padding-top: 2%"><?php echo $row['deskripsi']; ?></p>
               <section id="forum">
                 <h2 style="padding-top: 2%" class="judul-teks">Forum Berita</h2>
@@ -114,7 +120,7 @@
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
           <center>
-            <img src="../Gambar/peduliku.png" alt="..." class="rounded">
+            <img src="../../Gambar/peduliku.png" alt="..." class="rounded">
             <p class="color-text">Tanggap Bencana Indonesia</p>
           </center>
         </div>

@@ -57,7 +57,7 @@
           <hr>
         </div>
         <div class="col-lg-6">
-          <form action="proses_signup.php" method="post" enctype="multipart/form-data">
+          <form action="./Proses/proses_signup.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label for="exampleFormControlFile1"><b>Upload foto</b></label>
               <input name="gambar" type="file" class="form-control-file" id="exampleFormControlFile1"
@@ -93,7 +93,7 @@
         <div class="col-lg-12">
           <div class="row mt-4">
             <div class="col-md-6">
-              <button type="submit" class="btn btn-primary w-100">Registrasi</button>
+              <input type="submit" class="btn btn-primary w-100" value="Registrasi">
             </div>
             <div class="col-md-6">
               <button type="reset" class="btn btn-secondary w-100">Reset</button>

@@ -1,13 +1,14 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image/png" href="./Gambar/icon_peduliku.png">
+  <link rel="icon" type="image/png" href="../Gambar/icon_peduliku.png">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -17,48 +18,17 @@
 </head>
 
 <body>
-  <!-- Awal Navbar -->
-  <nav class="my-navbar navbar sticky-top navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="index.php">
-      <img src="./Gambar/peduliku.png" height="50" alt="">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Berita/berita.php">Berita</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a class="nav-link" href="masuk.php">Masuk</a>
-        </li>
-        <li>
-          <a class="nav-link" href="daftar.php">Daftar</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- Akhir Navbar -->
-
   <!-- form masuk -->
   <section class="masuk">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2>LOGIN</h2>
+          <h2>Admin</h2>
           <hr>
         </div>
         <div class="col-lg-4"></div>
         <div class="col-lg-4 ">
-          <form action="./proses/proses_login.php" method="post">
+          <form action="proses_login.php" method="post">
             <div class="form-group">
               <label for="exampleInputEmail1"><b>Username</b></label>
               <input name="username" type="text" class="form-control" id="exampleInputEmail1"
@@ -83,26 +53,6 @@
     </div>
   </section>
   <!-- form masuk -->
-
-  <!-- Footer -->
-  <section class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4">
-          <center>
-            <img src="./Gambar/peduliku.png" alt="..." class="rounded">
-            <p class="color-text">Tanggap Bencana Indonesia</p>
-          </center>
-        </div>
-        <div class="col-lg-4"></div>
-      </div>
-      <center>
-        <p class="color-text">copyright © 2019 Peduliku all right reserved</p>
-      </center>
-    </div>
-  </section>
-  <!-- Footer -->
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
