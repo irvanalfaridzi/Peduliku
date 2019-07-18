@@ -29,7 +29,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
@@ -38,7 +38,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a class="nav-link" href="masuk.php">Masuk</a>
+          <a class="nav-link active" href="masuk.php">Masuk</a>
         </li>
         <li>
           <a class="nav-link" href="daftar.php">Daftar</a>
@@ -74,7 +74,7 @@
             </div>
           </form>
           <center>
-            <p class="pt-4">Sudah punya akun? <a href="login.php"><B>Login</B></a> | Kembali ke Beranda, Klik di <a
+            <p class="pt-4">Belum punya akun? <a href="daftar.php"><B>Daftar</B></a> | Kembali ke Beranda, Klik di <a
                 href="index.php"><B>sini</B></a></p>
           </center>
         </div>

@@ -43,10 +43,6 @@
               <button type="submit" class="btn btn-primary w-100">Login</button>
             </div>
           </form>
-          <center>
-            <p class="pt-4">Sudah punya akun? <a href="login.php"><B>Login</B></a> | Kembali ke Beranda, Klik di <a
-                href="index.php"><B>sini</B></a></p>
-          </center>
         </div>
         <div class="col-lg-4"></div>
       </div>
