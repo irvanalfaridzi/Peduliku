@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="../style.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Peduliku</title>
 </head>
@@ -22,8 +21,7 @@
         <a class="navbar-brand" href="../index.php">
             <img src="../Gambar/peduliku.png" height="50" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -48,18 +46,24 @@
     </nav>
     <!-- Akhir Navbar -->
 
+    <?php
+    include '../koneksi/koneksi.php';
+    session_start();
+    $sql_metod = "SELECT id_metod, nama_metod FROM metode_bayar";
+    $metode = mysqli_query($conn, $sql_metod) or die(mysqli_error($conn));
+    ?>
+
     <!-- isi donasi -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center donasi">
-                <form action="verif_donasi.php" method="post">
+                <form action="simpan_donasi.php" method="post">
                     <h1>Beri Donasi Sekarang!</h1><br>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Rp</span>
                         </div>
-                        <input name="nominal" type="text" class="form-control"
-                            aria-label="Amount (to the nearest dollar)" placeholder="Masukkan jumlah donasi">
+                        <input name="nominal" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Masukkan jumlah donasi">
                         <div class="input-group-append">
                             <span class="input-group-text">.00</span>
                         </div>
@@ -70,22 +74,21 @@
                             <label class="input-group-text" for="inputGroupSelect01">Metode Pembayaran</label>
                         </div>
                         <select name="metode" class="custom-select" id="inputGroupSelect01">
-                            <!-- <?php
-                                  if (mysqli_num_rows($metode) > 0) {
-                                    // output data of each row
-                                    while($met = $metode->fetch_assoc()) {
-                                ?>
-                                <option value="<?php echo $met['nama_metod'];?>"><?php echo $met['nama_metod'];?></option>
+                            <?php
+                            if (mysqli_num_rows($metode) > 0) {
+                                // output data of each row
+                                while ($met = $metode->fetch_assoc()) {
+                                    ?>
+                                    <option value="<?php echo $met['nama_metod']; ?>"><?php echo $met['nama_metod']; ?></option>
                                 <?php
-                                    }
-                                  }
-                                ?> -->
+                                }
+                            }
+                            ?>
                         </select>
                     </div>
 
                     <div class="input-group mb-3">
-                        <input name="nama_lengkap" type="text" class="form-control" placeholder="Masukkan Nama Lengkap"
-                            aria-label="Username" aria-describedby="basic-addon1">
+                        <input name="nama_lengkap" type="text" class="form-control" placeholder="Masukkan Nama Lengkap" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
                     <div class="input-group mb-3">
@@ -94,16 +97,13 @@
                                 <input type="checkbox" name="anonim" aria-label="Checkbox for following text input">
                             </div>
                         </div>
-                        <input disabled type="text" class="form-control" aria-label="Text input with checkbox"
-                            placeholder="Donasi sebagai anonymous">
+                        <input disabled type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Donasi sebagai anonymous">
                     </div>
                     <!-- <?php
-                              
+
                             ?> -->
                     <div class="input-group mb-3">
-                        <input name="emailno" type="text" class="form-control"
-                            placeholder="Masukkan email atau nomor whatsapp" aria-label="Username"
-                            aria-describedby="basic-addon1">
+                        <input name="emailno" type="text" class="form-control" placeholder="Masukkan email atau nomor whatsapp" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
                     <div class="input-group mb-3">
@@ -144,15 +144,9 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

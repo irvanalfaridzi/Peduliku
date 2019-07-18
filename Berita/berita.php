@@ -11,11 +11,14 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
   <title>Peduliku</title>
 </head>
 
 <body>
+  <?php
+  include '../koneksi/koneksi.php';
+  session_start();
+  ?>
   <!-- Awal Navbar -->
   <nav class="my-navbar navbar sticky-top navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="../index.php">
@@ -47,22 +50,53 @@
   <!-- Akhir Navbar -->
 
   <!-- daftar berita -->
+
   <section class="berita-file">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h2>Berita</h2><hr>
+          <h2>Berita</h2>
+          <hr>
         </div>
-        <div class="col-lg-4">
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="isi_berita.php" class="btn btn-primary">Go somewhere</a>
+        <!-- ambil data berita -->
+        <?php
+        $sql = "SELECT b.id,judul, deskripsi,tgl_kejadian, kategori, lokasi, tgl_start_donasi,tgl_selesai_donasi, jml_donasi, count(id_berita) as donatur, g.nama, datediff(tgl_selesai_donasi, tgl_start_donasi) as selisih FROM `berita` b left join donate d on b.id = d.id_berita JOIN gambar g ON b.id = g.id GROUP BY b.id";
+        $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+        if (mysqli_num_rows($result) > 0) {
+          // output data of each row
+          $i = 1;
+          while ($row = $result->fetch_assoc()) {
+            ?>
+            <div class="col-lg-4 kartu">
+              <div class="card">
+                <form action="isi_berita.php" method="post">
+                  <input hidden type="text" name="id_berita" value=<?php echo $row['id']; ?>>
+                  <img style="height:200px;" src=<?php echo '../images/' . $row['nama']; ?> class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="./Berita/isi_berita.php"><?php echo $row['judul']; ?></a></h5>
+                    <p class="card-text">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          DONATUR <br>
+                          <span><?php echo $row['donatur']; ?></span></li>
+                          <hr>
+                        </div>
+                        <div class="col-lg-6">
+                          PEROLEHAN <br>
+                          <span><?php echo 'Rp ' . $row['jml_donasi']; ?></span>
+                          <hr>
+                        </div>
+                      </div>
+                    </p>
+                    <input type="submit" class="btn btn-primary" value="Lihat Berita">
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
-        </div>
+          <?php
+          }
+        }
+        ?>
       </div>
     </div>
   </section>
